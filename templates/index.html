@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename= 'css/index.css') }}">
+	<title>Home</title>
+</head>
+
+<body>
+	<h1>Home</h1>
+	<h2>Assets</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>OS</th>
+				<th>Vulnerabilities</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for asset in assets %}
+			<tr>
+				<td>
+					<a href="/asset/{{ asset['id'] }}">{{ asset['name'] }}</a>
+				</td>
+				<td>{{ asset['os'] }}</td>
+				<td>{{ asset['num_vulns'] }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+</body>

@@ -1,0 +1,83 @@
+/* Reset default styles */
+html, body, h1, h2, h3, p, ul, li, table, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  
+  body {
+    background-color: #333333;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3 {
+    color: #ffcc00;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+    margin-top: 30px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  thead {
+    background-color: #444444;
+  }
+  
+  th {
+    border-bottom: 2px solid #666666;
+    color: #ffffff;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #222222;
+  }
+  
+  tbody tr:hover {
+    background-color: #555555;
+  }
+  
+  a {
+    color: #ffcc00;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Additional Styling for Vulnerabilities */
+  .vulnerability-details {
+    background-color: #444444;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  .vulnerability-details h3 {
+    font-size: 1.2em;
+    color: #ffcc00;
+    margin-bottom: 10px;
+  }
+  
+  .vulnerability-details p {
+    margin-bottom: 10px;
+  }
+  

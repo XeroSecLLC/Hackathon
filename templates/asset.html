@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename= 'css/asset.css') }}">
+	<title>{{ asset['name'] }}</title>
+</head>
+
+<body>
+	<h1>{{ asset['name'] }}</h1>
+	<p>ID: {{ asset['id'] }}</p>
+	<p>OS: {{ asset['os'] }}</p>
+	<h2>Vulnerabilities - {{ asset['num_vulns'] }}</h2>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Severity</th>
+				<th>Synopsis</th>
+				<th>CVE</th>
+				<th>ID</th>
+				<th>Description</th>
+				<th>Solution</th>
+				<th>Fix</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for vuln in vulns %}
+			<tr>
+				<td><a href="/asset/{{ asset['id'] }}/{{ vuln.id }}">{{ vuln.name }}</a></td>
+				<td>{{ vuln.severity }}</td>
+				<td>{{ vuln.synopsis }}</td>
+				<td>{{ vuln.cve }}</td>
+				<td>{{ vuln.id }}</td>
+				<td>{{ vuln.description }}</td>
+				<td>{{ vuln.solution }}</td>
+				<td>
+					<a href="/asset/{{ asset['id'] }}/{{ vuln.id }}/fix">▶</a>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+</body>
